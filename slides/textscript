@@ -1,0 +1,14 @@
+==Qué es node?
+
+-Javascript en el lado del servidor
+-Unas cuantas bibliotecas en lo alto de V8, la máquina virtual de Javascript de Google Chrome
+-Con un API para acceder a la red y al sistema de ficheros
+-Proporciona un modelo orientado eventos con E/S asíncrona
+  *metafora del rey
+
+==Para qué me vale?
+-Tiempos de respuesta bajos
+-Alta concurrencia
+
+
+
