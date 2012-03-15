@@ -80,11 +80,16 @@
 	</ul>
       </article>
 
-      <article>
+      <article class="smaller">
+ 
         <h3>
 		Javascript          
         </h3>
-	<code>
+	<div class="build">
+	<h4>
+		¿Te gusta javascript?
+	</h4>
+	<pre>
 	var fs = require('fs');
 	function findFile(path, searchFile, callback) {
 	  fs.readdir(path, function (err, files) {
@@ -102,281 +107,227 @@
 	    });
 	  });
 	}
-	</code>
-	<article>
-	
+	</pre>
+	</div>
+	</article>
+	<article class="blank">
+	<img src="images/callbacks.png" class="centered">	
+	</article>
+	<article class="blank">
+	<img src="images/nestedcallbacks.jpg" class="centered">	
 	</article>
       </article>
 
       <article>
-        <h3>
-          Slide with bullet points and a longer title, just because we
-          can make it longer
-        </h3>
-        <ul>
-          <li>
-            Use this template to create your presentation
-          </li>
-          <li>
-            Use the provided color palette, box and arrow graphics, and
-            chart styles
-          </li>
-          <li>
-            Instructions are provided to assist you in using this
-            presentation template effectively
-          </li>
-          <li>
-            At all times strive to maintain Google's corporate look and feel
-          </li>
-        </ul>
+	<ul class="build">
+	<li>Al final mola si cambias un poco la forma de pensar</li>
+	<li>Scope de variables</li>
+	<li>Closures</li>
+	</ul>
       </article>
 
-      <article>
-        <h3>
-          Slide with bullet points that builds
-        </h3>
-        <ul class="build">
-          <li>
-            This is an example of a list
-          </li>
-          <li>
-            The list items fade in
-          </li>
-          <li>
-            Last one!
-          </li>
-        </ul>
-
-        <div class="build">
-          <p>Any element with child nodes can build.</p>
-          <p>It doesn't have to be a list.</p>
-        </div>
-      </article>
-
-      <article class='smaller'>
-        <h3>
-          Slide with bullet points (small font)
-        </h3>
-        <ul>
-          <li>
-            Use this template to create your presentation
-          <li>
-            Use the provided color palette, box and arrow graphics, and
-            chart styles
-          <li>
-            Instructions are provided to assist you in using this
-            presentation template effectively
-          <li>
-            At all times strive to maintain Google's corporate look and feel
-        </ul>
-      </article>
-
-      <article>
-        <h3>
-          Slide with a table
-        </h3>
-        
-        <table>
-          <tr>
-            <th>
-              Name
-            <th>
-              Occupation
-          <tr>
-            <td>
-              Luke Mahé
-            <td>
-              V.P. of Keepin’ It Real
-          <tr>
-            <td>
-              Marcin Wichary
-            <td>
-              The Michael Bay of Doodles
-        </table>
-      </article>
-      
-      <article class='smaller'>
-        <h3>
-          Slide with a table (smaller text)
-        </h3>
-        
-        <table>
-          <tr>
-            <th>
-              Name
-            <th>
-              Occupation
-          <tr>
-            <td>
-              Luke Mahé
-            <td>
-              V.P. of Keepin’ It Real
-          <tr>
-            <td>
-              Marcin Wichary
-            <td>
-              The Michael Bay of Doodles
-        </table>
-      </article>
-      
-      <article>
-        <h3>
-          Styles
-        </h3>
-        <ul>
-          <li>
-            <span class='red'>class="red"</span>
-          <li>
-            <span class='blue'>class="blue"</span>
-          <li>
-            <span class='green'>class="green"</span>
-          <li>
-            <span class='yellow'>class="yellow"</span>
-          <li>
-            <span class='black'>class="black"</span>
-          <li>
-            <span class='white'>class="white"</span>
-          <li>
-            <b>bold</b> and <i>italic</i>
-        </ul>
-      </article>
-      
-      <article>
-        <h2>
-          Segue slide
-        </h2>
-      </article>
-
-      <article>
-        <h3>
-          Slide with an image
-        </h3>
-        <p>
-          <img style='height: 500px' src='images/example-graph.png'>
-        </p>
-        <div class='source'>
-          Source: Sergey Brin
-        </div>
-      </article>
-
-      <article>
-        <h3>
-          Slide with an image (centered)
-        </h3>
-        <p>
-
-        </p>
-        <div class='source'>
-          Source: Larry Page
-        </div>
-      </article>
-
-      <article class='fill'>
-        <h3>
-          Image filling the slide (with optional header)
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
-      </article>
-
-      <article>
-        <h3>
-          This slide has some code
-        </h3>
-        <section>
-        <pre>
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }
+      <article class="smaller">
+	<h3>(A)Sincronía</h3>
+	<ul>
+		<li>
+		Las funciones del core de node son asíncronas (excepto las explícitamente síncronas)
+		</li>
+	</ul>
+	<div class="build">
+	<pre>
+var fs = require('fs'); 
+var data = fs.readFileSync(__dirname + '/slides/textscript','utf8');
+console.log(data); 
+	</pre>
+	<pre>
+var fs = require('fs');
+fs.readFile(__dirname + '/slides/textscript', 'utf8', function (err, data) {
+  if (err) {
+    return console.log(err);
   }
-&lt;/script&gt;
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-  u { color: 'umber' }
-&lt;/style&gt;
-</pre>
-        </section>
+  console.log(data); 
+);
+	</pre>
+	</div>
       </article>
-      
-      <article class='smaller'>
-        <h3>
-          This slide has some code (small font)
-        </h3>
-        <section>
-        <pre>
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }
+      <article class="smaller">
+	<h3>(A)Sincronía</h3>
+	<pre>
+for (var i = 0; i < 5; i++) {
+   setTimeout(function () {
+     console.log(i);
+   }, i);
+}
+
+	</pre>
+	<div class="build">
+	<p>	¿Qué hace este código?</p>
+	<pre>
+for (var i = 0; i < 5; i++) {
+   (function(i) {
+     setTimeout(function () {
+       console.log(i);
+     }, i);
+   })(i);
+}
+	</pre>
+	</div>
+      </article>
+      <article class="smaller">
+	<h3>Callbacks</h3>
+	<ul>
+	<li>Son funciones que se ejecutan cuando ocurre un evento</li>
+	<li>Permiten al programa continuar con la ejecución</li>
+	<li>Así evitamos la espera activa en E/S</li>
+	</ul>
+	<pre>
+var fs = require('fs');
+fs.readFile(__dirname + '/slides/textscript', 'utf8', function (err, data) {
+  if (err) {
+    return console.log(err);
   }
-&lt;/script&gt;
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-  u { color: 'umber' }
-&lt;/style&gt;
-</pre>
-        </section>
-      </article>
-      
+  console.log(data); 
+);
+	</pre>
+      </article> 
       <article>
-        <q>
-          The best way to predict the future is to invent it.
-        </q>
-        <div class='author'>
-          Alan Kay
-        </div>
+	<h3>EventEmitters</h3>
+	<ul>
+	<li>Asociación entre un string y un callback</li>
+	<li>Los eventos se pueden emitir y el callback llamarse una o varias veces</li>
+	
+	</ul>
+	<pre>
+obj.on('evento', function(arg1) { … });
+obj.once('evento', function(arg1) { … });
+this.emit('mievento', "mensaje del evento");
+	</pre>	 
+      </article> 
+      <article> 
+	<h3>Timers</h3>
+	<pre>
+// timeout
+setTimeout(function() {
+  console.log('Foo');
+}, 1000);
+// intervalo
+var counter = 0;
+var interval = setInterval( function() {
+  console.log('Bar', counter);
+  counter++;
+  if (counter >= 3) {
+    clearInterval(interval);
+  }
+}, 1000);
+	</pre>
+      </article> 
+      <article> 
+	<h3>Streams</h3>
+	<pre>
+var fs = require('fs');
+var file = fs.createReadStream('./test.txt');
+file.on('error', function(err) {
+  console.log('Error '+err);
+  throw err;
+});
+file.on('data', function(data) {
+  console.log('Data '+data);
+});
+file.on('end', function(){
+  console.log('Finished reading all of the data');
+});
+	</pre>
       </article>
-      
-      <article class='smaller'>
-        <q>
-          A distributed system is one in which the failure of a computer 
-          you didn’t even know existed can render your own computer unusable.
-        </q>
-        <div class='author'>
-          Leslie Lamport
-        </div>
+      <article>
+	<h3>NPM</h3>
+	<p>Node package manager, similar a rubygems</p>
+	<p>En debian mejor instalarlo desde la página</p>
+	<p>
+	<code>
+		npm install express
+	</code>
+	</p>
       </article>
-      
-      <article class='nobackground'>
-        <h3>
-          A slide with an embed + title
-        </h3>
-        
-        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      <article>
+	<h3>¿Y como depuro javascript?</h3>
+	<ul>
+		<li>
+			node-inspector 
+		</li>
+		<li>
+		v8-profiler
+		</li>	
+
+		<li>
+		<a href="http://docs.nodejitsu.com/articles/getting-started/how-to-debug-nodejs-applications">docs.nodejitsu.com</a>
+		</li>
+
+	</ul>
+      </article>
+      <article>
+	<h3>Algunos módulos útiles</h3>
+	<ul>
+		<li>express</li>
+		<li>async</li>
+		<li>socket.io</li>
+		<li>websocket</li>
+		
+	</ul>
+      </article>
+      <article>
+	<h3>Pros y contras de nodejs</h3>
+	<div class=build>
+		<ul class="green">
+			<li>Está orientado a eventos</li>
+			<li>No tienes que preocuparte de mutex, locks y demás</li>
+			<li>Es rápido porque V8 es muy rápida</li>
+			<li>Tiene una comunidad y desarrolladores muy activos</li>
+			<li>Existe un montón de módulos para hacer lo que quieras</li>
+		</ul>
+		<ul class="red">
+			<li>Está en continuo desarrollo</li>
+			<li>Tu programa puede quedar obsoleto</li>
+			<li>Curva de aprendizaje</li>
+		</ul>
+      </article>
+      <article class="smaller">
+	<h3>Documentación recomendada</h3>
+	<ul>
+<li><a href="http://nodejs.org/api" >http://nodejs.org/api</a></li>
+<li><a href="http://nodejs.org/community">http://nodejs.org/community</a></li>
+
+<li><a href="http://docs.nodejitsu.com">http://docs.nodejitsu.com</a></li>
+
+<li><a href="http://book.mixu.net">http://book.mixu.net</a></li>
+
+<li><a href="http://howtonode.org">http://howtonode.org</a></li>
+
+<li><a href="http://github.com">http://github.com</a></li>
+
+<li><a href="http://www.nodebeginner.org">http://www.nodebeginner.org</a></li>
+
+<li><a href="http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb">http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb</a></li>
+
+<li><a href="http://www.nodecloud.org/">http://www.nodecloud.org/</a></li>
+
+<li><a href="http://nodeguide.com/">http://nodeguide.com/</a></li>
+
+<li><a href="http://eloquentjavascript.net/">http://eloquentjavascript.net/</a></li>
+
+<li>aprendiendo by example con los módulos </li>
+	</ul>	
       </article>
 
-      <article class='nobackground'>
-        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
-      </article>
-
-      <article class='fill'>
-        <h3>
-          Full-slide embed with (optional) slide title on top
-        </h3>
-        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
-      </article>
       
       <article>
         <h3>
-          Thank you!
+          Preguntas!?
         </h3>
         
         <ul>
           <li>
-            <a href='http://www.google.com'>google.com</a>
+            <a href='http://github.com/juanramb/nodejscourse'>Código y traspas en github (fork me!)</a>
+	  </li>
         </ul>
       </article>
 

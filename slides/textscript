@@ -51,6 +51,17 @@
 	-v8-profiler
  un poco primitivo, pero no está mal
 
+==Pros y contras
+It's event driven. Together with closures it's very simple to imagine the client lifecycle.
+You don't have to care about threads, locks and all the parallel stuff.
+It's very fast (built on V8 JavaScript Engine)
+For games you can write the game logic just once and then use it for both server and frontend.
+It's just like any other JavaScript.
+but on the other hand there are some gotchas:
+
+It's under rapid development and your server might not be compatible with newer versions of node.js.
+It's all quiet new. I haven't seen any real application of node.js. Just a bunch of games and some nice demos.
+Node.js unlike Apache doesn't use processes for each connection.
 
 ==Alternativas a nodejs
 	-python twisted
@@ -64,5 +75,9 @@ http://howtonode.org
 http://github.com
 	*aprendiendo by example con los módulos 
 http://www.nodebeginner.org
+http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb
+http://www.nodecloud.org/
+http://nodeguide.com/
+http://eloquentjavascript.net/
 
 
