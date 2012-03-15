@@ -9,6 +9,33 @@
 ==Para qué me vale?
 -Tiempos de respuesta bajos
 -Alta concurrencia
+==Javascript?
+-por qué?
+-te gusta javascript? 
+  *enseñar anidamiento de callbacks vs código ruby
+-pero mola porque consigues la asincronía de forma más o menos sencilla
+*aunque los anidamientos de callbacks....
+==(A)sincronía?
+-node te permite ser asíncrono casi sin hacer nada
+-usa las funciones asíncronas del core siempre que sea posible
+	*ejemplo del readFile
+-callbacks
+	*
+-Event Emitters
+	*Un event emitter es simplemente una asociación entre un string y un callback
+	*un evento se puede emitir -> se llama al callback una sola vez o varias
+	*ver el on y el emit 
+-ejemplo de callbacks
+==NPM
+-para instalar módulos adicionales, tipo rubygems
+
+==Como depurar
+-node-inspector
+	-v8-profiler
+ un poco primitivo, pero no está mal
 
 
+==Alternativas a nodejs
+	-twisted
+	-la de ruby
 
