@@ -1,10 +1,13 @@
 var http = require('http');
 http.createServer(function(req,res){
-  console.dir(req);
-  res.writeHead(200, {"Content-Type": "text/plain"});
+  res.writeHead(200, {
+    "content-type": "text/plain",
+    "connection": "keep-alive"});
   res.write("Hola Mundo!");
   setInterval(say,1000,res,"y demás planetas!") 
-
+  setTimeout(function(){
+	  res.end()
+  }, 10000);
 
 }).listen(8080)
 var say = function(res,what){
