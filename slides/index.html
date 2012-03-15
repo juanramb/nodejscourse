@@ -14,7 +14,7 @@
 
 <html>
   <head>
-    <title>Presentation</title>
+    <title>Introducción a Node.js</title>
 
     <meta charset='utf-8'>
     <script
@@ -24,7 +24,6 @@
   <style>
     /* Your individual styles here, or just use inline styles if that’s
        what you want. */
-//    .slides.template-default article.biglogo {background : white url("images/gul-logo-small.png") 50% 50% no-repeat !important;} 
     
   </style>
   
@@ -55,42 +54,58 @@
       </article>
       
       <article>
-        <p>
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-        </p>
-        <p>
-          There is more text just underneath.
-        </p>
+	<h3>
+	¿Qué es node.js?
+	</h3>
+	<ul class="build">
+		<li>Javascript en el lado del servidor </li>
+		<li>Bibliotecas en lo alto de V8, la VM Javascript de Chrome</li>
+		<li>Modelo orientado a eventos con E/S asíncrona</li>
+		<li>Event Loop
+			<ul class="build">
+				<li>Tareas</li>
+				<li>Eventos</li>
+			</ul>
+		</li>
+	</ul>
+      </article>
+
+      <article>
+	<h3>
+		¿Para qué lo puedo usar?
+	</h3>
+	<ul class="build">
+		<li>Baja latencia</li>
+		<li>Alta concurrencia</li>
+	</ul>
       </article>
 
       <article>
         <h3>
-          Simple slide with header and text
+		Javascript          
         </h3>
-        <p>
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-        </p>
-        <p>
-          There is more text just underneath with a <code>code sample: 5px</code>.
-        </p>
-      </article>
-
-      <article class='smaller'>
-        <h3>
-          Simple slide with header and text (small font)
-        </h3>
-        <p>
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-        </p>
-        <p>
-          There is more text just underneath with a <code>code sample: 5px</code>.
-        </p>
+	<code>
+	var fs = require('fs');
+	function findFile(path, searchFile, callback) {
+	  fs.readdir(path, function (err, files) {
+	    if(err) { return callback(err); }
+	    files.forEach(function(file) {
+	      fs.stat(path+'/'+file, function() {
+	        if(err) { return callback(err); }
+	        if(stats.isFile() && file == searchFile) {
+	          callback(undefined, path+'/'+file);
+	          }
+	        } else if(stats.isDirectory()) {
+	          findFile(path+'/'+file, searchFile, callback);
+	        }
+	      });
+	    });
+	  });
+	}
+	</code>
+	<article>
+	
+	</article>
       </article>
 
       <article>

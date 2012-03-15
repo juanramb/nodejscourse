@@ -5,30 +5,47 @@
 -Con un API para acceder a la red y al sistema de ficheros
 -Proporciona un modelo orientado eventos con E/S asíncrona
   *metafora del rey
+  *Event loop: lista de tareas asociadas a eventos
 
 ==Para qué me vale?
 -Tiempos de respuesta bajos
 -Alta concurrencia
+
+
 ==Javascript?
 -por qué?
 -te gusta javascript? 
   *enseñar anidamiento de callbacks vs código ruby
+
 -pero mola porque consigues la asincronía de forma más o menos sencilla
 *aunque los anidamientos de callbacks....
+*scope de variables, delayed execution, closures (funciones anidadas)
 ==(A)sincronía?
 -node te permite ser asíncrono casi sin hacer nada
--usa las funciones asíncronas del core siempre que sea posible
-	*ejemplo del readFile
+  *ejemplos de qué no hacer
 -callbacks
-	*
+	*Son funciones que se ejecutan cuando una tarea finaliza
+	*Permiten al programa mandar hacer una tarea y ejecutar cualquier otra cosa
+	*De este modo se evita la espera activa en E/S
+ ejemplo de callbacks en traspa
 -Event Emitters
 	*Un event emitter es simplemente una asociación entre un string y un callback
 	*un evento se puede emitir -> se llama al callback una sola vez o varias
-	*ver el on y el emit 
--ejemplo de callbacks
+	*ver el on,once y el emit 
+-usa las funciones asíncronas del core siempre que sea posible
+	*ejemplo del readFileSync(Async)
+
+==Algunas cosas útiles del core
+-Timers
+	*Hablar de como usar bien los timers con el ejemplo del setInterval y la funcion recursiva
+-Streams
+	*De lectura y escritura, un evento por cada trozo de datos, no al final
+	*Se puede hacer pipe :)
+
 ==NPM
 -para instalar módulos adicionales, tipo rubygems
-
+==Módulos útiles
+-async
 ==Como depurar
 -node-inspector
 	-v8-profiler
@@ -36,8 +53,8 @@
 
 
 ==Alternativas a nodejs
-	-twisted
-	-la de ruby
+	-python twisted
+	-ruby EventMachine
 ==Docs y sitios consultados en mi periplo con node
 http://nodejs.org/api
 http://nodejs.org/community
