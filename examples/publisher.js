@@ -1,10 +1,10 @@
 var WebSocketServer = require('websocket').server
     ,http = require('http')
-    ,io = require('socket.io'); 
 
 
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
+	console.dir(request);
     response.writeHead(404);
     response.end();
 });
@@ -48,7 +48,7 @@ var mdstatus = function(){
   console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 };
 //sacamos el status cada 10s
-setInterval(function(){ mdstatus();},10000);
+setInterval(mdstatus,1000);
 
 //ws control
 wsServer.on('request', function(request) {
@@ -60,7 +60,9 @@ wsServer.on('request', function(request) {
     }
     var connection = request.accept('myprotocol', request.origin);
     console.log((new Date()) + ' Connection accepted.');
-
+    setInterval(function(){
+	sendMessage(new Buffer("hola"));
+    },1000)
     function sendMessage(message){
 	if (connection.connected) {
 	  connection.sendBytes(message)
@@ -87,7 +89,6 @@ wsServer.on('request', function(request) {
     });//connection on message
     connection.on('close', function(reasonCode, description) {
       console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
-      mdclient.removeListener('md_msg',sendMessage);
     });
 });//on ws request
 

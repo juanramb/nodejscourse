@@ -1,10 +1,8 @@
-//var io = require('socket.io-client');
-//var socket = io.connect("http://10.0.9.61:3003");
 var WebSocketClient = require('websocket').client;
 var client = new WebSocketClient();
 var rmessages = 0; 
 var lasttime=(new Date()).getTime();
-var tick = 1000;
+var tick = 1;
 
 client.on('connectFailed', function(error) {
     console.log('Connect Error: ' + error.toString());
@@ -19,9 +17,10 @@ client.on('connect', function(connection) {
         console.log('md-protocol Connection Closed');
     });
     connection.on('message', function(message) {
+	
         if (message.type === 'binary') {
 	    if (rmessages % tick == 0){
-            //console.log("Received: '" + message.binaryData + "'");
+            console.log("Received: '" + message.binaryData + "'");
 	    recordTime()
 
             }
@@ -31,7 +30,7 @@ client.on('connect', function(connection) {
 
 });
 
-client.connect('ws://10.0.9.61:3004/', 'md-protocol');
+client.connect('ws://jarama.gul.es:3004/', 'myprotocol');
 
 
 var recordTime= function(){
