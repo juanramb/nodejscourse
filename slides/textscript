@@ -19,7 +19,7 @@
 
 -pero mola porque consigues la asincronía de forma más o menos sencilla
 *aunque los anidamientos de callbacks....
-*scope de variables, delayed execution, closures (funciones anidadas)
+*scope de variables, delayed execution, closures (conjunto de variables que se ven en un determinado momento)
 ==(A)sincronía?
 -node te permite ser asíncrono casi sin hacer nada
   *ejemplos de qué no hacer
